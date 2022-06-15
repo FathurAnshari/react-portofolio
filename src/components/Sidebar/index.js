@@ -24,22 +24,31 @@ const Sidebar = () => {
         <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
       </Link>
       <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
+        <NavLink
+          end
+          className={(navData) => (navData.isActive ? 'active' : '')}
+          to="/"
+        >
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="about-link" to="/about">
+        <NavLink
+          className={(navData) => (navData.isActive ? 'active' : 'about-link')}
+          to="/about"
+        >
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
         <NavLink
-          activeclassname="active"
-          className="portfolio-link"
+          className={(navData) =>
+            navData.isActive ? 'active' : 'portfolio-link'
+          }
           to="/portfolio"
         >
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
         </NavLink>
         <NavLink
-          activeclassname="active"
-          className="contact-link"
+          className={(navData) =>
+            navData.isActive ? 'active' : 'contact-link'
+          }
           to="/contact"
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
